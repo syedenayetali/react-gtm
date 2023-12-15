@@ -1,6 +1,12 @@
 import style from "./productCard.module.css";
 
 const ProductCard = ({ itemdata }) => {
+  const registerEvent = () => {
+    window.dataLayer.push({
+      event: "testEvent",
+      productTitle: itemdata.image,
+    });
+  };
   return (
     <div className={style.pdpViweSection}>
       <img
@@ -14,7 +20,9 @@ const ProductCard = ({ itemdata }) => {
         <p className={style.price}>₹ {(itemdata?.price * 82.14).toFixed(2)}</p>
       </div>
       <div className={style.atcButtonDiv}>
-        <button className={style.atcButton}>Add To Cart</button>
+        <button className={style.atcButton} onClick={registerEvent}>
+          Add To Cart
+        </button>
       </div>
     </div>
   );
