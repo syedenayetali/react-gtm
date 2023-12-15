@@ -1,0 +1,17 @@
+.mainDiv {
+  background-color: rgb(222, 222, 222);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0.45rem 15rem;
+  font-size: 10px;
+}
+.list {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+.listItem {
+  margin: 0 1rem;
+  cursor: pointer;
+}

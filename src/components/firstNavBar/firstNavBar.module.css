@@ -1,0 +1,44 @@
+.mainDiv {
+  padding: 0.5rem 15rem;
+  border-bottom: 1px solid rgb(215, 215, 215);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.navBarList {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.logoImage {
+  width: 6rem;
+}
+.listItem {
+  margin: 0 2rem;
+  cursor: pointer;
+}
+.inputBox {
+  height: 2.5rem;
+  width: 15rem;
+  margin-right: 1rem;
+  border: none;
+  background-color: rgb(235, 235, 235);
+  border-radius: 5px;
+  padding: 0rem 1rem;
+  font-size: 12px;
+  /* border-right: 1px solid red; */
+}
+.listItem2 {
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+.indianFlag {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+.icons {
+  padding-top: 0.5rem;
+}

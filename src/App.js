@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+// import "./App.css";
+import { Fragment, useEffect, useState } from "react";
+import TopBar from "./components/topbar/topBar";
+import FirstNavBar from "./components/firstNavBar/firstNabBar";
+import SecondNavBar from "./components/secondNavBar/secondNavBar";
+import style from "./App.module.css";
+import Plp from "./components/plp/plp";
+import { Switch, Route } from "react-router-dom";
+import Dashboard from "./components/dashboard/dashboard";
 
 function App() {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    (async function () {
+      const fetchData = await fetch("https://fakestoreapi.com/products");
+      const jsonedData = await fetchData.json();
+      setData(jsonedData);
+    })();
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      {data.length === 0 && (
+        <div className={style.loaderBg}>
+          <span className={style.loader}></span>
+        </div>
+      )}
+      <TopBar />
+      <FirstNavBar />
+      <SecondNavBar />
+      <Switch>
+        <Route path="/" component={Dashboard}></Route>
+        <Route path="/men" component={Plp}></Route>
+      </Switch>
+    </Fragment>
   );
 }
 
